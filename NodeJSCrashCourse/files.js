@@ -1,7 +1,7 @@
 const fs = module.require('fs')
 
 // read file
-let filePath = './docs/doc1.txt'
+let filePath = './docs/blog1.txt'
 if (fs.existsSync(filePath)) {
     fs.readFile(filePath, (err, data) => {
         if (err) {
@@ -14,7 +14,7 @@ if (fs.existsSync(filePath)) {
 }
 
 // write file
-filePath = './docs/doc2.txt'
+filePath = './docs/blog2.txt'
 fs.writeFile(filePath, 'Hello again', (err) =>{
     if (err) {
         console.log(err)
@@ -43,7 +43,7 @@ if (fs.existsSync(dirPath)) {
 }
 
 // remove file
-filePath = './docs/doc2.txt'
+filePath = './docs/blog2.txt'
 if (fs.existsSync(filePath)) {
     fs.unlink(filePath, (err) => {
         if (err) {
