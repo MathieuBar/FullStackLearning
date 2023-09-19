@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "nodejscrashcourse",
+  "version": "1.0.0",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MathieuBar/FullStackLearning.git"
+  },
+  "keywords": [
+    "Node",
+    "Course",
+    "NetNinja"
+  ],
+  "author": "MathieuBar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MathieuBar/FullStackLearning/issues"
+  },
+  "homepage": "https://github.com/MathieuBar/FullStackLearning#readme",
+  "description": ""
+}
