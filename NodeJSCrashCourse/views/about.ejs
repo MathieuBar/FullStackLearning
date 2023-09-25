@@ -1,32 +1,16 @@
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Node.js Crash Course | <%= title %>
-  </title>
-</head>
+<%- include("./partials/head.ejs") %>
 
 <body>
-  <h1>
-    <%= title %>
-  </h1>
-  <nav>
-    <ul>
-      <li><a href="/">Homepage</a></li>
-      <li><a href="/about">About page</a></li>
-      <li><a href="/create">Create blog article</a></li>
-    </ul>
-  </nav>
+  <%- include("./partials/nav.ejs") %>
+
   <div class="about content">
     <h2>About Us</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quibusdam quaerat illo a modi tenetur ut
-      blanditiis, illum quo consectetur recusandae excepturi natus impedit rem, tempora cum fuga quae in.</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quibusdam quaerat illo a modi tenetur ut
-      blanditiis, illum quo consectetur recusandae excepturi natus impedit rem, tempora cum fuga quae in.</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quibusdam quaerat illo a modi tenetur ut
-      blanditiis, illum quo consectetur recusandae excepturi natus impedit rem, tempora cum fuga quae in.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quibusdam quaerat illo a modi tenetur ut blanditiis, illum quo consectetur recusandae excepturi natus impedit rem, tempora cum fuga quae in.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quibusdam quaerat illo a modi tenetur ut blanditiis, illum quo consectetur recusandae excepturi natus impedit rem, tempora cum fuga quae in.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quibusdam quaerat illo a modi tenetur ut blanditiis, illum quo consectetur recusandae excepturi natus impedit rem, tempora cum fuga quae in.</p>
   </div>
-</body>
 
+  <%- include("./partials/footer.ejs") %>
+</body>
 </html>
