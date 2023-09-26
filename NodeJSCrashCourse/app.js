@@ -1,4 +1,5 @@
-const express = require('express');
+const express = module.require('express');
+const morgan = module.require('morgan');
 
 // express app
 const app = express();
@@ -9,6 +10,12 @@ app.listen(3000);
 // register view engine
 app.set('view engine', 'ejs');
 // app.set('views', 'myviews');
+
+// logger middleware (3rd party middelware "morgan")
+app.use(morgan('dev'));
+
+// static pages middleware (built-in express static middleware)
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   const blogs = [
