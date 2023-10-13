@@ -30,7 +30,9 @@ function getDetailsPage(req, res) {
             title: `Post | ${result.title}`,
             blog: result,
         }))
-        .catch((err) => console.log(err))
+        .catch((err) => {
+            res.status(404).render('404', {title: 'Blog not found'})
+        })
 }
 
 function postPost(req, res) {
