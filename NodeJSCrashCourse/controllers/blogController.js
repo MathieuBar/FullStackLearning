@@ -12,7 +12,7 @@ module.exports = controller
 
 function getHomePage(req, res) {
     Blog.find().sort({ createdAt: -1 })
-        .then(result => res.render('index', {
+        .then(result => res.render('blogs/index', {
             title: 'All blogs',
             blogs: result,
         }))
@@ -20,13 +20,13 @@ function getHomePage(req, res) {
 }
 
 function getCreatePage(req, res) {
-    res.render('create', { title: 'Create a new blog' })
+    res.render('blogs/create', { title: 'Create a new blog' })
 }
 
 function getDetailsPage(req, res) {
     const id = req.params.id;
     Blog.findById(id)
-        .then(result => res.render('details', {
+        .then(result => res.render('blogs/details', {
             title: `Post | ${result.title}`,
             blog: result,
         }))
