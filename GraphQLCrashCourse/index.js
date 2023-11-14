@@ -1,7 +1,9 @@
 import { ApolloServer } from "@apollo/server"
 import { startStandaloneServer } from "@apollo/server/standalone"
 import { typeDefs } from "./schema.js"
+import crypto from "crypto"
 import db from "./_db.js"
+
 
 // resolvers
 const resolvers = { 
@@ -43,6 +45,26 @@ const resolvers = {
         author(parent) {
             return db.authors.find(a => a.id === parent.author_id)
         }
+    },
+
+    Mutation: {
+        addGame(_, args) {
+            const game = { ...args.game, id: crypto.randomUUID()/*Math.floor(Math.random(1000)).toString*/ }
+            db.games.push(game)
+            return game
+        },
+        updateGame(_, args) {
+            const gameIdx = db.games.findIndex(g => g.id === args.id)
+            if (gameIdx < 0) return
+            db.games[gameIdx] = { ...db.games[gameIdx], ...args.gameChanges }
+            return db.games[gameIdx]
+        },
+        deleteGame(_, args) {
+            const idx = db.games.findIndex(g => g.id === args.id)
+            const game = db.games[idx]
+            db.games.splice(idx, 1)
+            return game
+        },
     },
 }
 
